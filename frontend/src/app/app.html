@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">PCW</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,27 +9,13 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Productos</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
+       
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form class="d-flex" role="Salir">
+        <button class="btn btn-danger" type="submit">Salir</button>
       </form>
     </div>
   </div>
@@ -45,36 +31,33 @@
   <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Acciones</th>
+      <th scope="col">ID</th>
+      <th scope="col">Codigo</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">precio</th>
+      <th scope="col">Stock</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+       <td>
+
+       </td>
+      <td>1</td>
+      <td>0001</td>
+      <td>COCA-COLA</td>
+      <td>L 30</td>
+      <td>20</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>John</td>
-      <td>Doe</td>
-      <td>@social</td>
-    </tr>
+
+      <td>
+        <button type="button" class="btn btn-primary btn-sm" style="margin-right: 5px;" data-bs-toggle="modal" data-bs-target="#EditarProductoModal">Editar</button>
+        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#EliminarProductoModal">Eliminar</button>
   </tbody>
 </table>
   </div>
 
- 
 </div>
 
 </div>
@@ -85,30 +68,98 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Crear Producto</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
        <form>
-  <div class="mb-3">
-       <label for="exampleInputEmail1" class="form-label">Email address</label>
-       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-       <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    
+        
+        <div class="mb-3">
+       <label for="exampleCodigoCrear" class="form-label">Codigo</label>
+       <input type="text" class="form-control" id="exampleCodigoCrear">
+       </div>
+       
+       
+       <div class="mb-3">
+       <label for="examplDescripcionCrear" class="form-label">Descripcion</label>
+       <input type="text" class="form-control" id="exampleDescripcionCrear">
+       
        </div>
       <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="text" class="form-control" id="exampleInputPassword1">
+      <label for="exampleInputPrecioCrear" class="form-label">Precio</label>
+      <input type="number" class="form-control" id="exampleInputPrecioCrear">
+       
+       </div>
+      <div class="mb-3">
+      <label for="exampleInputStockCrear" class="form-label">Stock</label>
+      <input type="number" class="form-control" id="exampleInputStockCrear">
   </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form> ...
+ 
+</form> 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-success">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="EditarProductoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Producto</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <form>
+    
+        
+        <div class="mb-3">
+       <label for="exampleCodigoEditar" class="form-label">Codigo</label>
+       <input type="text" class="form-control" id="exampleCodigoEditar">
+       </div>
+       
+       
+       <div class="mb-3">
+       <label for="examplDescripcionEditar" class="form-label">Descripcion</label>
+       <input type="text" class="form-control" id="exampleDescripcionEditar">
+       
+       </div>
+      <div class="mb-3">
+      <label for="exampleInputPrecioEditar" class="form-label">Precio</label>
+      <input type="number" class="form-control" id="exampleInputPrecioEditar">
+       
+       </div>
+      <div class="mb-3">
+      <label for="exampleInputStockEditar" class="form-label">Stock</label>
+      <input type="number" class="form-control" id="exampleInputStockEditar">
+  </div>
+ 
+</form> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="EliminarProductoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Estas Seguro?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Aceptando esta ventana de dialogo habras eliminado el registro.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Confirmar</button>
       </div>
     </div>
   </div>
